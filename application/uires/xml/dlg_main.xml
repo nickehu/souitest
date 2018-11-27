@@ -2,8 +2,13 @@
 appWnd="1"
 translucent="1" 
 >
-  <root >
-    <window size="-2,-2" colorbkgnd="#1E1E1E"  margin="1" colorBorder="#0366d6">
+  <skin>
+    <shape name="main_bg" shape="rectangle">
+      <stroke width="2" color="RGB(255,0,0)" style="dash"/>
+      <solid color="#cccccc"/>
+    </shape> 
+  </skin>
+  <root skin="main_bg">
       <!--不要在root结点配置margin,这里有bug-->
       <caption pos="0,0,-0,30" show="1" font="adding:0">
         <icon pos="10,8" src="ICON_LOGO:16"/>
@@ -16,6 +21,5 @@ translucent="1"
       <window pos="5,[2,-5,-5">
         <text pos="|0,|0" offset="-0.5,-0.5" colorText="#FFFFFF">这是一个由SOUI向导生成的APP框架</text>
       </window>
-    </window>
   </root>
 </SOUI>
