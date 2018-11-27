@@ -4,3 +4,7 @@ application/\.vs/application/v14/\.suo
 *.db
 
 *.opendb
+
+application/Debug/
+
+*.ipch
