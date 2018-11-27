@@ -3,10 +3,7 @@ appWnd="1"
 translucent="0" 
 >
   <skin>
-    <shape name="main_bg" shape="rectangle">
-      <stroke width="2" color="RGB(255,0,0)"/>
-      <solid color="#cccccc"/>
-    </shape> 
+    <colorrect name="main_bg" borderWidth="10" normal="#cccccc" normalBorder="#ff0000"/>
   </skin>
   <root skin="main_bg">
       <!--不要在root结点配置margin,这里有bug-->
