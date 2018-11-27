@@ -8,3 +8,5 @@ application/\.vs/application/v14/\.suo
 application/Debug/
 
 *.ipch
+
+application/Release/
