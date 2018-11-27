@@ -1,17 +1,18 @@
-﻿<SOUI name="mainWindow" title="@string/title" bigIcon="ICON_LOGO:32" smallIcon="ICON_LOGO:16" 
-width="850" height="600" margin="5,5,5,5" resizable="1" wndType="appMain"
+﻿<SOUI name="mainWindow" title="@string/title" bigIcon="ICON_LOGO:32" smallIcon="ICON_LOGO:16" width="850" height="600" margin="5,5,5,5" maxInset="0,10,0,0" resizable="1" wndType="appMain"
 appWnd="1"
 translucent="0" 
 >
   <skin>
-    <colorrect name="bkcolor" normal="#1E1E1E" />
+    <shape name="main_bg" shape="rectangle">
+      <stroke width="2" color="RGB(255,0,0)"/>
+      <solid color="#cccccc"/>
+    </shape> 
   </skin>
-  <root >
-    <window size="-2,-2" skin="bkcolor" margin="1" colorBorder="#0366d6" />
+  <root skin="main_bg">
       <!--不要在root结点配置margin,这里有bug-->
       <caption pos="0,0,-0,30" show="1" font="adding:0">
-        <icon pos="10,|0" offset="0,-0.5" src="ICON_LOGO:16"/>
-        <text pos="32,|0" font="size:12" offset="0,-0.5" ColorText="#999999" >this is a test demo</text>
+        <icon pos="10,8" src="ICON_LOGO:16"/>
+        <text pos="29,9">@string/title</text>
         <imgbtn name="btn_close" skin="_skin.sys.btn.close"    pos="-45,0" tip="close" animate="1"/>
         <imgbtn name="btn_max" skin="_skin.sys.btn.maximize"  pos="-83,0" animate="1" />
         <imgbtn name="btn_restore" skin="_skin.sys.btn.restore"  pos="-83,0" show="0" animate="1" />
