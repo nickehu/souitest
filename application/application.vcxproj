@@ -187,6 +187,7 @@
   <ItemGroup>
     <ClCompile Include="application.cpp" />
     <ClCompile Include="MainDlg.cpp" />
+    <ClCompile Include="myctrl.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -199,6 +200,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainDlg.h" />
+    <ClInclude Include="myctrl.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
@@ -225,6 +227,7 @@ xcopy "%(RootDir)%(Directory)*.*" "$(TargetDir)uires" /e/y/i</Command>
     <Xml Include="uires\values\skin.xml" />
     <Xml Include="uires\values\string.xml" />
     <Xml Include="uires\xml\dlg_main.xml" />
+    <Xml Include="uires\xml\menu_test.xml" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="uires\image\soui.ico" />

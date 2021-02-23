@@ -10,3 +10,9 @@ application/Debug/
 *.ipch
 
 application/Release/
+
+application/soui-sys-resourced.dll
+
+application/.vs/
+
+application/application.aps

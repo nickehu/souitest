@@ -1,9 +1,10 @@
 ﻿<SOUI name="mainWindow" title="@string/title" bigIcon="ICON_LOGO:32" smallIcon="ICON_LOGO:16" width="850" height="600" margin="5,5,5,5" maxInset="0,10,0,0" resizable="1" wndType="appMain"
 appWnd="1"
-translucent="0" 
+translucent="1" 
 >
   <skin>
-    <colorrect name="main_bg" borderWidth="10" normal="#cccccc" normalBorder="#ff0000"/>
+    <colorrect name="main_bg" borderWidth="1" normal="#ffffff" normalBorder="#ff0000"/>
+    <colorrect name="main_bg1" normal="#cccccc" />
   </skin>
   <root skin="main_bg">
       <!--不要在root结点配置margin,这里有bug-->
@@ -15,8 +16,90 @@ translucent="0"
         <imgbtn name="btn_restore" skin="_skin.sys.btn.restore"  pos="-83,0" show="0" animate="1" />
         <imgbtn name="btn_min" skin="_skin.sys.btn.minimize" pos="-121,0" animate="1" />
       </caption>
-      <window pos="5,[2,-5,-5">
-        <text pos="|0,|0" offset="-0.5,-0.5" colorText="#FFFFFF">这是一个由SOUI向导生成的APP框架</text>
+      <window pos="15,[15,-15,-15" skin="main_bg">
+        
+        <window pos="1,1,-1,@35" layout="hbox" colorBkgnd="#888888" >
+          
+          <!--title-->
+          <window size="-1,-1" weight="1" layout="hbox" layout_gravity="center" colorBkgnd="#AA8888">
+            <icon size="16,16" extend_left="10" src="ICON_LOGO:16"/>
+            <text size="-2,-1" extend_left="5"  >caption</text>
+          </window>
+          
+          <!--sys menu-->
+          <window size="-1,-2" layout_gravity="right" layout="hbox" >
+            <imgbtn name="btn_menu"  skin="_skin.sys.btn.minimize" animate="1" />
+            <imgbtn  skin="_skin.sys.btn.close" tip="close" animate="1"/>
+          </window>
+        
+        </window>
+        
+        <window pos="1,[,-1,-1"  colorBkgnd="#888888">
+
+          <!--<window size="-2,-1" layout="vbox" padding="5,5,5,5" colorBkgnd="#ffffff">
+            <window size="-2,100" layout="hbox">
+              <window size="0,-2" text="水平平分窗口1" weight="1" colorBkgnd="#ff0000"/>
+              <window size="0,-2" text="水平平分窗口2" weight="1" colorBkgnd="#00ff00"/>
+              <window size="0,-2" text="水平平分窗口3" weight="1" colorBkgnd="#0000ff"/>
+            </window>
+            <text size="-1,-1" text="使用layout_gravity属性居中对齐" layout_gravity="center"/>
+            <window size="-1,-1" layout_gravity="right" extend_top="5" layout="hbox" colorBkgnd="#FF00ff">
+              --><!--IDCANCEL支持enter退出窗口--><!--
+              <button size="-1,-1" padding="10,5,10,5" drawFocusRect="0" id="IDOK" text="确定"/>
+              --><!--IDCANCEL支持esc退出窗口--><!--
+              <button size="-1,-1" padding="10,5,10,5" drawFocusRect="0" extend_left="10" id="IDCANCEL" text="取消"/>
+            </window>
+          </window>-->
+
+          <img pos="1,[5" name="close_btn" skin="skin_btn_close" />
+          
+          <button pos="1,[5,-1,@100" name="calcsum">sum</button>
+          <window pos="1,[5, -1,@100" layout="vbox" name ="content_view" colorBkgnd="#FF8888">
+            <button size="-1,-1" extend_left="10" text="1"/>
+            <button size="-1,-1" extend_left="10" text="2"/>
+            <button size="-1,-1" extend_left="10" text="3"/>
+            <button size="-1,-1" extend_left="10" text="4"/>
+            <button size="-1,-1" extend_left="10" text="5"/>
+          </window>
+          <window pos="1,[5, -1,@100" layout="hbox" name ="content_view" colorBkgnd="#FF8888">
+            <button size="120,60" name="modify" text="modify" colorText="#FFFF00" colorTextHover="#FF00FF" />
+            <MyCtrl size="120,60" text="move" colorText="#00FF00" colorTextHover="#0000FF" >
+              <button name="close_btn" text="test" colorText="#00FF00" colorTextHover="#0000FF" />
+             </MyCtrl>
+          
+        </window>
+          
+          <!--这里演示在SOUI中使用线性布局,在window中指定layout="vbox,hbox,linearLayout"时窗口的子窗口布局变成自动布局模式--><!--
+          <window layout="vbox" size="-1,-1" colorBkgnd="#cccccc" gravity="center">
+            --><!--线性布局的自适应子窗口大小--><!--
+            <text>vbox + gravity + wrapContent</text>
+            <window size="100,30" colorBkgnd="#ff0000"/>
+            <window size="200,30" extend="10,5,10,5" colorBkgnd="#ff0000"/>
+            <window size="120,30" layout_gravity="right" colorBkgnd="#ff0000"/>
+          </window>
+
+          <window pos="0,[5,@-1,@200" layout="vbox" colorBkgnd="#cccccc">
+            --><!--线性布局的weight属性--><!--
+            <text extend_bottom="10">vbox + gravity + weight</text>
+            <window size="100,30" colorBkgnd="#ff0000"/>
+            <window size="200,30" extend="10,5,10,5" colorBkgnd="#ff0000" weight="1"/>
+            <window size="120,30" layout_gravity="right" colorBkgnd="#ff0000" weight="1"/>
+            <button size="100,30" extend_top="10">button test</button>
+          </window>
+
+          <window pos="0,[5" layout="vbox" colorBkgnd="#cccccc" id="10000">
+            <text extend_bottom="10" layout_gravity="center">hbox demo</text>
+            <window size="-1,-1" layout="hbox" colorBkgnd="#888888">
+              --><!--线性布局之hbox--><!--
+              <button size="100,30">button1</button>
+              <button size="100,30" extend_left="10">button2</button>
+              <button size="100,30" extend_left="10">button3</button>
+              <button size="100,30" extend_left="10">button4</button>
+            </window>
+          </window>-->
+          
+        </window>
+        
       </window>
   </root>
 </SOUI>
